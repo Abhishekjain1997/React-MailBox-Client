@@ -5,11 +5,8 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-/*
-React Bootstrap Configuration
-*/
-import "../node_modules/react-bootstrap/dist/react-bootstrap";
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
