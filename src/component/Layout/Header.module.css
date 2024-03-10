@@ -1,77 +1,77 @@
 .header {
-    display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
-    grid-gap: 1rem;
-    background-color: maroon;
-    color: #fff;
-    padding: 10px;
-    align-items: center;
-    
-  }
-  .header-title {
-    grid-column: 1;
-    margin: 0;
-    font-size: 36px;
-  }
-  .header-span {
-    color: blue;
-  }
-  .header-link {
-    grid-column: 2;
-    color: #fff;
-    text-decoration: none;
-    margin-left: 200px;
-  }
-  .header-span:hover {
-    color: #ccc;
-  }
-  .actions {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  background-color: maroon;
+  color: #fff;
+  padding: 10px;
+  align-items: center;
   
-  .links{
-    text-decoration: none;
-    cursor: pointer;
-    font: inherit;
-    color: white;
-    background-color: rgb(208, 81, 64);
-    border: 1px solid #ee463d;
-    border-radius: 4px;
-    padding: 0.5rem 2.5rem;
-  }
-  
-  .actions button {
-    cursor: pointer;
-    font: inherit;
-    color: white;
-    background-color: rgb(208, 81, 64);
-    border: 1px solid #ee463d;
-    border-radius: 4px;
-    padding: 0.5rem 2.5rem;
-  }
-  .actions button:hover {
-    background-color: #c98817;
-    border-color: #642211;
-  }
-  .actions .toggle {
-    margin-top: 1rem;
-    background-color: transparent;
-    color: #9f5ccc;
-    border: none;
-    padding: 0.15rem 1.5rem;
-  }
-  .actions .toggle:hover {
-    background-color: transparent;
-    color: #ae82cc;
-  }
-  .header-class {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
-    color: rgb(180, 180, 224);
-    background-color: rgb(52, 44, 50);
-  }
+}
+.header-title {
+  grid-column: 1;
+  margin: 0;
+  font-size: 36px;
+}
+.header-span {
+  color: blue;
+}
+.header-link {
+  grid-column: 2;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 200px;
+}
+.header-span:hover {
+  color: #ccc;
+}
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.links{
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: rgb(208, 81, 64);
+  border: 1px solid #ee463d;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+
+.actions button {
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: rgb(208, 81, 64);
+  border: 1px solid #ee463d;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+.actions button:hover {
+  background-color: #c98817;
+  border-color: #642211;
+}
+.actions .toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #9f5ccc;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+.actions .toggle:hover {
+  background-color: transparent;
+  color: #ae82cc;
+}
+.header-class {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  color: rgb(180, 180, 224);
+  background-color: rgb(52, 44, 50);
+}

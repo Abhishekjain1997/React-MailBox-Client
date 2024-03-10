@@ -2,13 +2,13 @@ import React, { useRef } from "react";
 import classes from "./AuthForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../../store/auth-slice";
-import useHttp from "../../hooks/use-http";
 import { useNavigate } from "react-router-dom";
+import useHttp from "../../hooks/use-http";
 
 const AuthForm = (props) => {
-  const { sendRequest } = useHttp();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const { sendRequest } = useHttp();
+  const navigate=useNavigate();
   const isLoggedIn = useSelector((state) => state.auth.haveAccount);
 
   const emailInput = useRef();
@@ -23,6 +23,7 @@ const AuthForm = (props) => {
     const enteredEmail = emailInput.current.value;
     const enteredPassword = passwordInput.current.value;
 
+
     if (!isLoggedIn) {
       sendRequest({
         url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBSYmNhsvJo572bZ6cIzJCCt5xqb9js1yY",
@@ -32,34 +33,35 @@ const AuthForm = (props) => {
           password: enteredPassword,
           returnSecureToken: true,
         },
-      });  
+      });
       alert("Your Account Has Been Sucessfully Created You Can Now Login");
+    
     } else {
       const saveLoginData = (data) => {
         dispatch(
           authActions.login({ token: data.idToken, email: enteredEmail })
         );
-      };
-      
-      sendRequest(
-        {
-          url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBSYmNhsvJo572bZ6cIzJCCt5xqb9js1yY",
-          method: "POST",
-          body: {
-            email: enteredEmail,
-            password: enteredPassword,
-            returnSecureToken: true,
+      }
+        sendRequest(
+          {
+            url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBSYmNhsvJo572bZ6cIzJCCt5xqb9js1yY",
+            method: "POST",
+            body: {
+              email: enteredEmail,
+              password: enteredPassword,
+              returnSecureToken: true,
+            },
           },
-        },
-        saveLoginData
-      );
+          saveLoginData
+        );
     }
-    emailInput.current.value = "";
-    passwordInput.current.value = "";
+    emailInput.current.value = ''
+    passwordInput.current.value = ''
   };
 
   const handleForgotPassword = () => {
-    navigate("/forgot")
+    navigate("/forgotpassword");
+ 
   };
 
   return (
@@ -78,12 +80,12 @@ const AuthForm = (props) => {
           <div className={classes.actions}>
             <button type="submit">{isLoggedIn ? "Login" : "SignUp"}</button>
           </div>
-        </form>
-        <div className={classes.actions}>
+          <div className={classes.actions}>
           {isLoggedIn && (
             <button onClick={handleForgotPassword}>Forgot Password?</button>
-          )}
-        </div>
+            )}
+          </div>
+        </form>
       </div>
       <div className={classes.actions}>
         <button onClick={loginSignupHandler}>

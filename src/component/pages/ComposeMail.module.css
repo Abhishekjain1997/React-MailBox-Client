@@ -1,37 +1,37 @@
 .compose-mail {
-    width: 600px;
-    margin: 0 auto;
-    background-color: rgb(97, 121, 154);
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  label {
-    display: block;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-  
-  input[type="text"],
-  textarea {
-    font: inherit;
-    background-color: #f1e1fc;
-    color: #0300a8;
-    border-radius: 4px;
-    border: 1px solid white;
-    width: 80%;
-    text-align: left;
-    box-sizing: border-box;
-  }
-  
-  button[type="submit"] {
-    padding: 0.5rem 1rem;
-    background-color: rgb(104, 88, 133);
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
+  width: 600px;
+  margin: 0 auto;
+  background-color: rgb(97, 121, 154);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+input[type="text"],
+textarea {
+  font: inherit;
+  background-color: #f1e1fc;
+  color: #38015c;
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 80%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: rgb(104, 88, 133);
+  border: none;
+  color: white;
+  cursor: pointer;
+}

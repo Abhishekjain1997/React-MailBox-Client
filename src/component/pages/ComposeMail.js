@@ -8,14 +8,17 @@ const ComposeMail = (props) => {
   const {sendRequest} = useHttp()
   const show = useSelector(state => state.ui.show)
   const email = useSelector(state => state.auth.email)
+
   const senderMail = email.replace('@', '').replace('.', '')
+
   const dispatch = useDispatch()
   const emailRef = useRef();
   const subjectRef = useRef();
   const mailBodyRef = useRef();
   const composeMailHandler = (event) => {
     event.preventDefault();
-    const receiverMail = emailRef.current.value.replace('@', '').replace('.', '')
+
+     const receiverMail = emailRef.current.value.replace('@', '').replace('.', '')
     const recevierMailData = {
       sender: email,
       subject: subjectRef.current.value,
@@ -23,24 +26,23 @@ const ComposeMail = (props) => {
       isRead: false
     };
     const senderMailData = {
-      sentTo: emailRef.current.value,
-      subject: subjectRef.current.value,
-      body: mailBodyRef.current.value,
-    }
+        sentTo: emailRef.current.value,
+        subject: subjectRef.current.value,
+        body: mailBodyRef.current.value,
+      }
 
-    sendRequest({
-      url: `https://mailbox-client-ac835-default-rtdb.firebaseio.com/rec${receiverMail}.json`,
-      method: "POST",
-      body: recevierMailData
-    });
-    sendRequest({
-      url: `https://mailbox-client-ac835-default-rtdb.firebaseio.com/sent${senderMail}.json`,
-      method: "POST",
-      body: senderMailData
-    });  
-
-    dispatch(uiActions.handleShow());
-    
+      sendRequest({
+        url: `https://mailbox-client-ac835-default-rtdb.firebaseio.com/rec${receiverMail}.json`,
+        method: "POST",
+        body: recevierMailData
+      });
+      sendRequest({
+        url: `https://mailbox-client-ac835-default-rtdb.firebaseio.com/sent${senderMail}.json`,
+        method: "POST",
+        body: senderMailData
+      });
+  
+      dispatch(uiActions.handleShow());
   };
 
   return (
